@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+</head>
+<body>
+    <body> 
+        <!--As soon as you submit the form, page will refresh itself, you can still retreive info using get button--> 
+        <form name = "myform" class="myform">  
+            First Name: <input type="text" id="fname" required><br/>
+            Last Name: <input type="text" id="lname" required><br/>    
+            Roll Number: <input type="text" id="rnumber" required><br/> 
+            Gender: <input type="radio" name="gender" value="M"  required/>Male
+                    <input type="radio" name="gender" value="F"  required/>Female
+                    <br />
+            DOB: <input type="date" id="dob" required><br/>
+            Age: <input type="text" id="age" required><br/> 
+            Department: <input type="text" id="department" required><br/> 
+            <button onclick="callFunction()">Submit</button>
+        </form>
+        <div>
+            Enter Roll Number: <input type="text" id="getRollNumber">
+        </div>
+        <button onclick="getFunction()">Get</button>
+        <br/>
+        <div id="getdetail" style="display: none;">
+            Name: <span id="name_getdetail"></span><br/>
+            Gender: <span id="gender_getdetail"></span><br/>
+            DOB: <span id="dob_getdetail"></span><br/>
+            Age: <span id="age_getdetail"></span><br/>
+            Department: <span id="department_getdetail"></span>
+        </div>
+        
+</body>
+<script src="./script.js"></script>
+</html>
