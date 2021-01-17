@@ -1,0 +1,10 @@
+<ul>
+    <li *ngFor="let todo of todos" (click)="onSelect(todo)">
+        <span [class.selected]="selectedTodo === todo">{{todo.id}}</span>
+    </li>
+</ul>
+<div>
+    <p>id: {{selectedTodo.id}}</p>
+    <p>title: {{ selectedTodo.title}}</p>
+    <p>completed: {{selectedTodo.completed}}</p>
+</div>

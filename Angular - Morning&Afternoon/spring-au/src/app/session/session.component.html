@@ -1,0 +1,27 @@
+<ul>
+    <li *ngFor="let session of sessions" (click)="onSelect(session)" >
+      <span [class.selected]="selectedSession === session">{{session.name}} by
+      {{session.trainer }} on {{session.date}}</span>
+      <span> &nbsp; </span>
+      <button (click)="delete(session)">Delete</button>
+    </li>
+  </ul>
+  <form #editForm="ngForm" (ngSubmit)="edit(editForm.value)">
+    <input type="text" ngModel name="index" placeholder="Enter index" />
+    <input type="text" ngModel name="name" placeholder="Enter Session name" />
+    <input type="text" ngModel name="trainer" placeholder="Enter Trainer name" />
+    <input type="text" ngModel name="date" placeholder="Enter Date"/>
+    <br/>
+    <br/>
+    <button>Edit</button>
+  </form>
+  <br/>
+  <form #addForm="ngForm" (ngSubmit)="add(addForm.value)">
+    <input type="text" ngModel name="name" placeholder="Enter Session name" />
+    <input type="text" ngModel name="trainer" placeholder="Enter Trainer name" />
+    <input type="text" ngModel name="date" placeholder="Enter Date"/>
+    <br/>
+    <br/>
+    <button>Add</button>
+  </form>
+  <p>Selected Session is : {{selectedSession.name}} : {{selectedSession.trainer}} : {{selectedSession.date}}</p>
